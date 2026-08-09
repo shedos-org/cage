@@ -1,0 +1,11 @@
+# makepkg byproducts: pkg/ is what package() installs into, src/ holds the
+# extracted sources, and the tarball is what source= downloads to get there.
+pkg/
+src/
+*.tar.gz
+*.pkg.tar.zst
+*.pkg.tar.zst.sig
+*.log
+
+# where the shared pipeline collects what it built
+dist/
