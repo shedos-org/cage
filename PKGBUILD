@@ -16,7 +16,7 @@
 
 pkgname=cage
 pkgver=0.3.0
-pkgrel=3
+pkgrel=4
 pkgdesc='Wayland kiosk compositor (ShedOS: touchpad tap-to-click on by default)'
 arch=('x86_64')
 url='https://github.com/cage-kiosk/cage'
