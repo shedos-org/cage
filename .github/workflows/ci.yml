@@ -3,10 +3,17 @@ on:
   push:
     branches: [main]
   pull_request:
+# The build pushes the pkgrel bump back here when a release is already
+# published, and a reusable workflow cannot grant itself the write.
+permissions:
+  contents: write
 jobs:
   pipeline:
     uses: shed-os/shedos-ci/.github/workflows/package-pipeline.yml@main
     with:
       packages: '["."]'
+      # Also available, all optional: test_packages for pacman packages the
+      # suites need, allowed_skips for the suites whose skip the repo accepts,
+      # test_env for KEY=VALUE lines the suites read. See the shedos-ci README.
     secrets:
       SHEDOS_DISPATCH_TOKEN: ${{ secrets.SHEDOS_DISPATCH_TOKEN }}
